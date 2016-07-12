@@ -13197,7 +13197,7 @@
 /* 16 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<nav class=\"boi_nav\">\n    <div class=\"nav_box\">\n        <div class=\"logo\">\n            <a v-link=\"{name: 'index'}\" class=\"logo_box\">\n                <!-- <img src=\"../../../assets/images/logo.png\" alt=\"boi - build for elegance\" /> -->\n            </a>\n            <span class=\"logo_entry\">boi</span>\n        </div>\n        <div class=\"bar\">\n            <ul class=\"list\">\n                <li v-for='item in navlist' class=\"item\">\n                    <a v-link=\"{name: item.component}\" class=\"navlink\" title=\"{{item.title}}\">{{item.title}}</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n</nav>\n\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<nav class=\"boi_nav\">\n    <div class=\"nav_box\">\n        <div class=\"logo\">\n            <a v-link=\"{name: 'index'}\" class=\"logo_box\">\n                <!-- <img src=\"/assets/img/logo.png\" alt=\"boi - build for elegance\" /> -->\n            </a>\n            <span class=\"logo_entry\">boi</span>\n        </div>\n        <div class=\"bar\">\n            <ul class=\"list\">\n                <li v-for='item in navlist' class=\"item\">\n                    <a v-link=\"{name: item.component}\" class=\"navlink\" title=\"{{item.title}}\">{{item.title}}</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n</nav>\n\n";
 
 /***/ },
 /* 17 */

@@ -1,6 +1,6 @@
 @font-face {
   font-family: TrumpTownPro;
-  src: url(/image/TrumpTownPro.780dd465.otf);
+  src: url(/assets/font/TrumpTownPro.otf);
 }
 
 html {
@@ -57,7 +57,7 @@ a:linked {
   display: inline-block;
   width: 5rem;
   height: 5rem;
-  background: url(/image/logo.873dcfe4.png) no-repeat;
+  background: url(/assets/img/logo.png) no-repeat;
   background-size: 100% 100%;
 }
 
