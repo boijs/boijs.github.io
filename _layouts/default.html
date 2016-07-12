@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {{ content }}
+
+    <script src='{{ '/js/libs/zepto.min.js' | prepend: site.baseurl }}'></script>
+    <script src='{{ '/js/libs/vendor.js' | prepend: site.baseurl }}'></script>
+    <script src='{{ '/js/main.js' | prepend: site.baseurl }}'></script>
+
+  </body>
+
+</html>
