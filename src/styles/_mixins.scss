@@ -1,0 +1,36 @@
+$font-general: Open Sans, Helvetica, Arial, sans-serif;
+$color_drakblue: #315788;
+
+@mixin strictHeight($size) {
+    height: $size;
+    line-height: $size;
+}
+@mixin ulWithoutStyle(){
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+@mixin linkWithoutStyle(){
+    text-decoration: none;
+}
+@mixin transition($rule){
+    -webkit-transition: $rule;
+    -o-transition: $rule;
+    -moz-transition: $rule;
+    -ms-transition: $rule;
+    transition: $rule;
+}
+@mixin box-shadow($rule){
+    -webkti-box-shadow: $rule;
+    -o-box-shadow: $rule;
+    -moz-box-shadow: $rule;
+    -ms-box-shadow: $rule;
+    box-shadow: $rule;
+}
+@mixin border-radius($size){
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+    -ms-border-radius: $size;
+    -o-border-radius: $size;
+    border-radius: $size;
+}

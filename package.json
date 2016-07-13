@@ -1,0 +1,19 @@
+{
+  "name": "boijs.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "boi build prod",
+    "deploy": "node deploy.js",
+    "serve": "jekyll serve"
+  },
+  "devDependencies": {
+    "boi-plugin-loader-vue": "^1.0.1",
+    "shelljs": "^0.7.0",
+    "vue": "^1.0.26",
+    "vue-router": "^0.7.13"
+  },
+  "author": "zhoujunpeng",
+  "license": "ISC"
+}

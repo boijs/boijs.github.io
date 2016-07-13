@@ -1,0 +1,21 @@
+@import './_mixins.scss';
+
+@font-face {
+    font-family: TrumpTownPro;
+    src: url('../../assets/fonts/TrumpTownPro.otf');
+}
+html{
+    font-size: 12px;
+}
+body{
+    margin: 0;
+    font-family: $font-general;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    &:hover,&:visited{
+        text-decoration: none;
+        color: inherit;
+    }
+}
