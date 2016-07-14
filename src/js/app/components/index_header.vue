@@ -8,6 +8,7 @@ $padding_nav: 1rem;
     position: static;
     height: $height_logo+$padding_nav*2;
     .nav_box {
+        z-index: 999;
         background-color: #fff;
         height: $height_logo;
         padding: $padding_nav 0;

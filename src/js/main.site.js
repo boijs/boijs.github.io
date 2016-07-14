@@ -3,12 +3,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 // application modules
 import Index from './app/Index.vue';
-import Docs from './app/Docs.vue';
-import Api from './app/Api.vue';
-import About from './app/About.vue';
-import Plugins from './app/Plugins.vue';
-import Faq from './app/Faq.vue';
-import Solutions from './app/Solutions.vue';
 
 Vue.use(VueRouter);
 
@@ -25,38 +19,62 @@ router.map({
         component: Index
     },
     // 文档页
-    '/docs': {
+    '/docs/:anchor': {
         name: 'docs',
-        component: Docs
+        component: function(resolve) {
+            require.ensure(['./app/Docs.vue'], function(require) {
+                resolve(require("./app/Docs.vue"));
+            }, 'docs');
+        }
     },
     // 文档页
     '/plugins': {
         name: 'plugins',
-        component: Plugins
+        component: function(resolve) {
+            require.ensure(['./app/Plugins.vue'], function(require) {
+                resolve(require("./app/Plugins.vue"));
+            }, 'plugins');
+        }
     },
     // 文档页
     '/faq': {
         name: 'faq',
-        component: Faq
+        component: function(resolve) {
+            require.ensure(['./app/Faq.vue'], function(require) {
+                resolve(require("./app/Faq.vue"));
+            }, 'faq');
+        }
     },
     // 文档页
     '/solutions': {
         name: 'solutions',
-        component: Solutions
+        component: function(resolve) {
+            require.ensure(['./app/Solutions.vue'], function(require) {
+                resolve(require("./app/Solutions.vue"));
+            }, 'solutions');
+        }
     },
     // 开发者文档页面
     '/api': {
         name: 'api',
-        component: Api
+        component: function(resolve) {
+            require.ensure(['./app/Api.vue'], function(require) {
+                resolve(require("./app/Api.vue"));
+            }, 'api');
+        }
     },
     // about页面
     '/about': {
         name: 'about',
-        component: About
+        component: function(resolve) {
+            require.ensure(['./app/About.vue'], function(require) {
+                resolve(require("./app/About.vue"));
+            }, 'about');
+        }
     }
 });
 // 启动路由器
-router.start(outerApp, 'body');
+router.start(outerApp, '#app');
 
 // 默认在首页
 // router.go({

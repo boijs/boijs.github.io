@@ -6,10 +6,12 @@
   "scripts": {
     "build": "boi build prod",
     "deploy": "node deploy.js",
-    "serve": "jekyll serve"
+    "serve": "jekyll serve --incremental"
   },
   "devDependencies": {
+    "boi-plugin-loader-md": "^1.0.1",
     "boi-plugin-loader-vue": "^1.0.1",
+    "markdown-loader": "^0.1.7",
     "shelljs": "^0.7.0",
     "vue": "^1.0.26",
     "vue-router": "^0.7.13"

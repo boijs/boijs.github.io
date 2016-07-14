@@ -5,5 +5,9 @@
 plugins
 </template>
 <script>
-    export default {};
+    export default {
+        created: function(){
+            console.log(this.docs)
+        }
+    };
 </script>

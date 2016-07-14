@@ -53,7 +53,7 @@ $color_darkblue: #315788;
 
 <script>
 
-import LogoCanvas from './logo_canvas.vue';
+import LogoCanvas from './_logo_canvas.vue';
 export default {
     data: function() {
         let size_logo_canvas = {

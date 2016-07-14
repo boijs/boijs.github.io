@@ -1,3 +1,4 @@
+boi.use('boi-plugin-loader-md');
 boi.use('boi-plugin-loader-vue',{
     style: {
         destDir: 'style',
@@ -5,12 +6,12 @@ boi.use('boi-plugin-loader-vue',{
     }
 });
 boi.spec('basic', {
-    appName: 'boi-site',
+    appName: 'boisite',
     // 本地编译目录
     localPath: {
         src: './src/',
         dest: './.tmp/',
-        thirdparty: './libs/'
+        thirdparty: './js/libs/'
     },
 });
 
