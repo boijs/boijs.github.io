@@ -82,7 +82,7 @@ $padding_nav: 1rem;
         <div class="bar">
             <ul class="list">
                 <li v-for='item in navlist' class="item">
-                    <a v-link="{name: item.component}" class="navlink" title="{{item.title}}">{{item.title}}</a>
+                    <a v-link="item.params?{name: item.component,params: item.params}:{name: item.component}" class="navlink" title="{{item.title}}">{{item.title}}</a>
                 </li>
             </ul>
         </div>
@@ -97,25 +97,34 @@ export default {
     data: function() {
         let _navlist = [{
             title: '首页',
-            component: 'index'
+            component: 'index',
+            params: null
         }, {
             title: '开始使用',
-            component: 'docs'
+            component: 'docs',
+            params: {
+                anchor: 'start'
+            }
         }, {
             title: '插件',
-            component: 'plugins'
+            component: 'plugins',
+            params: null
         }, {
             title: '解决方案',
-            component: 'solutions'
+            component: 'solutions',
+            params: null
         }, {
             title: 'API',
-            component: 'api'
+            component: 'api',
+            params: null
         }, {
             title: 'FAQ',
-            component: 'faq'
+            component: 'faq',
+            params: null
         }, {
             title: '关于我们',
-            component: 'about'
+            component: 'about',
+            params: null
         }];
         return {
             navlist: _navlist
