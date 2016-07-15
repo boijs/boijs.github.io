@@ -19,7 +19,7 @@ router.map({
         component: Index
     },
     // 文档页
-    '/docs/:anchor': {
+    '/docs/:anchor/:subanchor': {
         name: 'docs',
         component: function(resolve) {
             require.ensure(['./app/Docs.vue'], function(require) {
@@ -73,10 +73,11 @@ router.map({
         }
     }
 });
+// 别名设置
+// 动态路径匹配实名路径没有逻辑意义，只是为了url的干净
+router.alias({
+    '/docs': '/docs/a/b',
+    '/docs/:anchor':'/docs/:anchor/b'
+})
 // 启动路由器
 router.start(outerApp, '#app');
-
-// 默认在首页
-// router.go({
-//     name: 'index'
-// });

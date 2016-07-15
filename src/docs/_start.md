@@ -1,17 +1,19 @@
-## Get Start  
+### boi编译兼容
+boi的编译功能基于webpack内核实现，默认的编译输出文件只兼容IE8+浏览器。如果需要兼容IE8以下浏览器，可以按照boi的配置API进行单独配置。
 
-### 安装  
+### boi脚手架
+boi内置三种不同类型的项目脚手架：
+* normal： 常规项目。不限制技术选型，用户可根据自身需求选择任意框架和第三方库；
+* vue-thirdparty：将vue作为第三方库单独引入。简单说就是vue.js不参与编译，在html文档中使用`script`标签单独引入；
+* vue-inline：将vue作为一个模块使用。在项目代码中`require`、`import`或其他模块化方案加载vue，vue参与编译。
+
+> boi内置的三种脚手架是从daojiaFE团队实际需求出发，所以不具有宽泛的通用性。boi提供[自定义脚手架API]()，用户可以根据自身需求进行定制。
+
+#### 使用脚手架搭建项目
+使用命令行工具运行：
 
 ```
-npm install boi-cli -g
-```
-
-### 创建boi项目  
-
-boi安装成功后，在工作目录内运行：
-
-```
-boi new boi-demo
+boi new webapp
 ```
 
 或者在已存在目录下运行：
@@ -22,80 +24,55 @@ boi new .
 
 命令行将依次有以下提示：
 
-![](assets/new-1.png)
+* 自定义项目名称，默认项目名称为app：
+    ![](assets/new-1.png)
 
-自定义项目名称，默认项目名称为app。
+* 选择项目类型：
+    ![](assets/new-2.png)
 
-![](assets/new-2.png)
+* 选择npm第三方依赖：
+    ![](assets/new-3.png)
 
-选择项目类型，上图中依次为常规项目、vue作为第三方库单独引入的项目和vue参与webpack打包的项目。
+* 最终确认：
 
-> 常规项目不限制任何选型，开发者可以自由使用第三方库的引入方式（script标签、npm等）。同时，常规项目的boi-conf.js只有最基本的配置，也就是说，如果在常规项目中使用vue，开发者需自行进行配置。
+    ![](assets/new-4.png)
 
-![](assets/new-3.png)
+* 配置完毕后，boi会自动安装npm第三方依赖：
+    ![](assets/new-5.png)
 
-选择npm第三方依赖。
+    执行成功后，生成的项目目录如下图：
 
-![](assets/new-4.png)
+    ![](assets/new-6.png)
 
-最终确认。
-
-![](assets/new-5.png)
-
-配置完毕后，boi会自动安装npm第三方依赖。全部执行成功后，生成的项目目录如下图：
-
-![](assets/new-6.png)
-
-### 编译项目文件  
-
-1.	在项目根目录下创建文件`boi-conf.js`;
-2.	编辑`boi-conf.js`中的配置项，比如js文件的编译配置如下：
-
+#### 编译项目文件
+使用脚手架成功搭建项目之后，进入项目目录：
 ```
-boi.spec('js', {
-    extType: 'js',
-    srcType: ['es2015'],
-    srcDir: 'js',
-    destDir: 'js'
-});
+cd webapp
 ```
 
-在项目根目录下执行`boi build`。默认是dev环境的编译，会生成souremap文件以方便debug。
-
-生产环境的编译执行：
-
+在项目根目录下执行`build`命令：
 ```
+// 默认dev环境编译，编译输出source map文件，并且代码不压缩
+boi build
+```
+
+或者
+```
+// 生成环境编译，无source map文件，代码压缩
 boi build prod
 ```
 
-prod环境编译输出的文件不会产生souremap。
+默认编译输出的目录`dest`。
 
-### 使用插件  
 
-编辑`boi-conf.js`，使用API `boi.use`引入插件，比如：
-
-```
-boi.use('boi-plugin-loader-vue');
-```
-
-boi会判断用户是否已安装此插件，如果没有，则boi会自动安装此插件。
-
-> 建议自行安装插件，boi使用npm安装插件，由于一些*原因*可能会安装失败
-
-如果npm被墙，请尝试以下*任意*一种方案：
-
-1.	挂VPN；
-2.	修改npm仓库到淘宝镜像`npm config set registry https://registry.npm.taobao.org`;
-3.	安装cnpm。
-
-> 如果安装cnpm，请务必自行安装插件
-
-### dev server  
-
-项目根目录下执行：
+#### dev server  
+boi提供dev server以方便本地开发调试，在项目根目录下执行：
 
 ```
 boi serve
 ```
+默认监听`8888`端口。
 
-执行成功后，如果项目中只存在一个`index.*.html`文件，可直接访问`localhost:8888`即可；如果项目中存在多个`index.*.html`文件，访问`localhost:8888/*.html`或者`localhost:8888/views/*.html`(html文件根据具体命名改动)。boi支持动态编译，开发过程中不必多次重启dev server。
+执行成功后，如果项目中只存在一个`index.*.html`文件，直接访问`localhost:8888`即可；如果项目中存在多个`index.*.html`文件，访问`localhost:8888/*.html`或者`localhost:8888/views/*.html`(html文件根据具体命名改动)。
+
+boi支持动态编译，开发过程中已存文件的修改不必重启dev server。但如果增加新文件，则必须重启dev server才可看到效果。

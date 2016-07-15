@@ -3,7 +3,7 @@
 </style>
 
 <template>
-<div class="article" v-html='content'>
+<div class="article github markdown" v-html='content'>
 
 </div>
 

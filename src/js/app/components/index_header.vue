@@ -5,14 +5,19 @@ $height_logo: 5rem;
 $padding_nav: 1rem;
 
 .boi_nav {
-    position: static;
+    position: relative;;
     height: $height_logo+$padding_nav*2;
+    &.fix{
+        .nav_box{
+            position: fixed;
+        }
+    }
     .nav_box {
         z-index: 999;
         background-color: #fff;
         height: $height_logo;
         padding: $padding_nav 0;
-        position: fixed;
+        position: absolute;;
         width: 100%;
         @include box-shadow( 0 2px 15px rgba(51, 51, 51, 0.5));
         .logo {
@@ -29,7 +34,7 @@ $padding_nav: 1rem;
             width: $height_logo;
             height: $height_logo;
             background: url('../../../assets/images/logo.png') no-repeat;
-            background-size: 100% 100%;
+            background-size: 100%;
         }
         .logo_entry {
             color: $color_drakblue;
@@ -71,7 +76,7 @@ $padding_nav: 1rem;
 
 <template>
 
-<nav class="boi_nav">
+<nav class="boi_nav" :class='{"fix": isfix}'>
     <div class="nav_box">
         <div class="logo">
             <a v-link="{name: 'index'}" class="logo_box">
@@ -94,6 +99,11 @@ $padding_nav: 1rem;
 <script>
 
 export default {
+    props: {
+        isfix: {
+            isfix: Boolean
+        }
+    },
     data: function() {
         let _navlist = [{
             title: '首页',
@@ -103,7 +113,8 @@ export default {
             title: '开始使用',
             component: 'docs',
             params: {
-                anchor: 'start'
+                anchor: 'install',
+                subanchor: 'install'
             }
         }, {
             title: '插件',

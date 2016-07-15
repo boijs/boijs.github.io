@@ -9,7 +9,7 @@
     "serve": "jekyll serve --incremental"
   },
   "devDependencies": {
-    "boi-plugin-loader-md": "^1.0.1",
+    "boi-plugin-loader-md": "^1.0.2",
     "boi-plugin-loader-vue": "^1.0.1",
     "markdown-loader": "^0.1.7",
     "shelljs": "^0.7.0",

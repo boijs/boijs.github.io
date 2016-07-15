@@ -1,6 +1,12 @@
+/* fonts */
 $font-general: Open Sans, Helvetica, Arial, sans-serif;
+/* colors */
 $color_drakblue: #315788;
+$color_grey: #dadada;
+$color_shadow: rgba(51,51,51,0.5);
+/* size */
 
+/* mixins */
 @mixin strictHeight($size) {
     height: $size;
     line-height: $size;

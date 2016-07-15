@@ -4,7 +4,7 @@
 
 <template>
 <!-- header -->
-<index-header></index-header>
+<index-header v-bind:isfix='true'></index-header>
 <!-- banner -->
 <index-banner></index-banner>
 <!-- introduction -->
