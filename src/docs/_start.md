@@ -28,6 +28,7 @@ boi new .
     ![](assets/new-1.png)
 
 * 选择项目类型：
+ 
     ![](assets/new-2.png)
 
 * 选择npm第三方依赖：
