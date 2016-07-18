@@ -126,7 +126,7 @@ export default {
                 subanchor: 'install'
             }
         }, {
-            title: '插件',
+            title: '资源',
             component: 'plugins',
             params: null
         }, {

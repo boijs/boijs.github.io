@@ -25,12 +25,15 @@ boi new .
 命令行将依次有以下提示：
 
 * 自定义项目名称，默认项目名称为app：
+
     ![](assets/new-1.png)
 
 * 选择项目类型：
+
     ![](assets/new-2.png)
 
 * 选择npm第三方依赖：
+
     ![](assets/new-3.png)
 
 * 最终确认：
@@ -38,6 +41,7 @@ boi new .
     ![](assets/new-4.png)
 
 * 配置完毕后，boi会自动安装npm第三方依赖：
+
     ![](assets/new-5.png)
 
     执行成功后，生成的项目目录如下图：

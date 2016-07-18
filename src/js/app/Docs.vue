@@ -73,9 +73,6 @@ export default {
                 name: 'boi脚手架',
                 anchor: 'boi-jiao-shou-jia'
             }, {
-                name: '使用脚手架搭建项目',
-                anchor: 'shi-yong-jiao-shou-jia-da-jian-xiang-mu'
-            }, {
                 name: '编译项目文件',
                 anchor: 'bian-yi-xiang-mu-wen-jian'
             }, {
@@ -98,6 +95,32 @@ export default {
                 name: '高级配置',
                 anchor: 'gao-ji-pei-zhi'
             }]
+        },{
+            anchor: 'modules',
+            title: '模块化开发',
+            subtitles: [{
+                name: 'ES6 modules',
+                anchor:'es6-modules'
+            },{
+                name: 'CommonJs',
+                anchor: 'commonjs'
+            },{
+                name: 'AMD',
+                anchor: 'amd'
+            }]
+        },{
+            anchor: 'plugins',
+            title: '使用插件',
+            subtitles: [{
+                name: '使用boi插件',
+                anchor:'shi-yong-boi-cha-jian'
+            },{
+                name: '编写boi插件',
+                anchor: 'bian-xie-boi-cha-jian'
+            },{
+                name: '使用webpack插件',
+                anchor: 'shi-yong-webpack-cha-jian'
+            }]
         }];
         let _docs = {
             install: {
@@ -108,6 +131,12 @@ export default {
             },
             config: {
                 content: require("../../docs/_config.md")
+            },
+            modules: {
+                content: require("../../docs/_modules.md")
+            },
+            plugins: {
+                content: require("../../docs/_plugins.md")
             }
         };
         let _size_canvas = {
