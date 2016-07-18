@@ -2,6 +2,11 @@
 @import "../../../styles/_mixins.scss";
 
 .logo_canvas {
+  &.mini{
+      .subtitle{
+          display: none !important;
+      }
+  }
   .stage {
     display: inline-block;
     vertical-align: middle;
@@ -44,7 +49,7 @@
 </style>
 
 <template>
-<div class="logo_canvas">
+<div class="logo_canvas" :class="{'mini': mode === 'mini'}">
     <canvas class="stage"></canvas>
     <div class="content">
         <p class="title hide">boi</p>
@@ -61,6 +66,9 @@ export default {
         size: {
             type: Object,
             required: true
+        },
+        mode: {
+            type: String
         }
     },
     ready: function() {

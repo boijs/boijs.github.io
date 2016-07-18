@@ -20,6 +20,13 @@ $padding_nav: 1rem;
         position: absolute;;
         width: 100%;
         @include box-shadow( 0 2px 15px rgba(51, 51, 51, 0.5));
+        &.mini{
+            @include box-shadow(none);
+            background-color: inherit;
+            .bar{
+                background-color: #fff;
+            }
+        }
         .logo {
             @include strictHeight($height_logo);
             overflow: hidden;
@@ -77,14 +84,12 @@ $padding_nav: 1rem;
 <template>
 
 <nav class="boi_nav" :class='{"fix": isfix}'>
-    <div class="nav_box">
-        <div class="logo">
-            <a v-link="{name: 'index'}" class="logo_box">
-                <!-- <img src="../../../assets/images/logo.png" alt="boi - build for elegance" /> -->
-            </a>
+    <div class="nav_box" v-bind:class='{"mini": mode==="mini"}'>
+        <div v-if='mode !== "mini"' class="logo">
+            <a v-link="{name: 'index'}" class="logo_box"></a>
             <span class="logo_entry">boi</span>
         </div>
-        <div class="bar">
+        <div class="bar" >
             <ul class="list">
                 <li v-for='item in navlist' class="item">
                     <a v-link="item.params?{name: item.component,params: item.params}:{name: item.component}" class="navlink" title="{{item.title}}">{{item.title}}</a>
@@ -97,11 +102,15 @@ $padding_nav: 1rem;
 </template>
 
 <script>
+import LogoCanvas from './_logo_canvas.vue';
 
 export default {
     props: {
         isfix: {
-            isfix: Boolean
+            type: Boolean
+        },
+        mode: {
+            type: String
         }
     },
     data: function() {

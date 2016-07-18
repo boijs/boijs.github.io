@@ -24,6 +24,10 @@ $color_darkblue: #315788;
     .startup {
         background-color: rgba(0, 0, 0, 0.7);
         color: #3dc14b;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        white-space: inherit;
         @include strictHeight(4rem);
         .startup_code {
             font-size: 1.5rem;

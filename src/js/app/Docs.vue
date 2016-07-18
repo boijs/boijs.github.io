@@ -13,9 +13,11 @@ $left-width: 25%;
         height: 100%;
         background-color: $color_grey;
         width: $left-width;
-        padding-top: 8rem;
         box-sizing: border-box;
-        box-shadow: 2px 0 10px $color_shadow;
+        @include box-shadow(2px 0 10px $color_shadow);
+        .logo_canvas{
+            margin: 1rem;
+        }
     }
     .docs_article {
         padding-left: 5%;
@@ -27,9 +29,12 @@ $left-width: 25%;
 <template>
 
 <!-- header -->
-<index-header :isfix='true'></index-header>
+<index-header :isfix='false' mode='mini'></index-header>
 <div class="docs">
     <div class="docs_index">
+        <a v-link="{name: 'index'}">
+            <logo-canvas v-bind:size='size_logo_canvas' mode='mini'></logo-canvas>
+        </a>
         <doc-index v-bind:index='index' v-bind:active='$route.params.anchor'></doc-index>
     </div>
     <div class="docs_article">
@@ -44,6 +49,7 @@ $left-width: 25%;
 import IndexHeader from './components/index_header.vue';
 import DocIndex from './components/doc_index.vue'
 import DocArticle from './components/doc_article.vue'
+import LogoCanvas from './components/_logo_canvas.vue';
 
 export default {
     data: function() {
@@ -104,9 +110,14 @@ export default {
                 content: require("../../docs/_config.md")
             }
         };
+        let _size_canvas = {
+            width: 100,
+            height: 100
+        };
         return {
             docs: _docs,
-            index: _index
+            index: _index,
+            size_logo_canvas: _size_canvas
         }
     },
     created: function() {
@@ -115,7 +126,8 @@ export default {
     components: {
         IndexHeader,
         DocIndex,
-        DocArticle
+        DocArticle,
+        LogoCanvas
     }
 };
 

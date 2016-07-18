@@ -2,7 +2,7 @@
 $font-general: Open Sans, Helvetica, Arial, sans-serif;
 /* colors */
 $color_drakblue: #315788;
-$color_grey: #dadada;
+$color_grey: #f3f0f0;
 $color_shadow: rgba(51,51,51,0.5);
 /* size */
 
@@ -27,7 +27,7 @@ $color_shadow: rgba(51,51,51,0.5);
     transition: $rule;
 }
 @mixin box-shadow($rule){
-    -webkti-box-shadow: $rule;
+    -webkit-box-shadow: $rule;
     -o-box-shadow: $rule;
     -moz-box-shadow: $rule;
     -ms-box-shadow: $rule;
