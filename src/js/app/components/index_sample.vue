@@ -64,7 +64,7 @@ $color_darkblue: #315788;
         打开浏览器访问<code>localhost:8888</code>便可以看到欢迎页面
     </p>
     <div class="more">
-        <a class='link' href="/docs">查看更多功能</a>
+        <a class='link' v-link='{name: "docs",params:{anchor:"install",subanchor:"install"}}'>查看更多功能</a>
     </div>
 </section>
 

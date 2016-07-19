@@ -41,7 +41,6 @@ $left-width: 25%;
         <doc-article v-bind:content='docs[$route.params.anchor]?docs[$route.params.anchor].content:docs.start.content'></doc-article>
     </div>
 </div>
-
 </template>
 
 <script>
@@ -124,19 +123,19 @@ export default {
         }];
         let _docs = {
             install: {
-                content: require("../../docs/_install.md")
+                content: require("../../md/docs/_install.md")
             },
             start: {
-                content: require("../../docs/_start.md")
+                content: require("../../md/docs/_start.md")
             },
             config: {
-                content: require("../../docs/_config.md")
+                content: require("../../md/docs/_config.md")
             },
             modules: {
-                content: require("../../docs/_modules.md")
+                content: require("../../md/docs/_modules.md")
             },
             plugins: {
-                content: require("../../docs/_plugins.md")
+                content: require("../../md/docs/_plugins.md")
             }
         };
         let _size_canvas = {

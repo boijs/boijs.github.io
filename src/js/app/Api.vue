@@ -1,9 +1,19 @@
-<style>
-
+<style lang='scss'>
+@import "../../styles/_mixins.scss";
 </style>
 <template>
-api
+    <!-- header -->
+    <index-header v-bind:isfix='true'></index-header>
+    TODO
 </template>
 <script>
-    export default {};
+    import IndexHeader from './components/index_header.vue';
+    export default {
+        components: {
+            IndexHeader
+        },
+        created: function(){
+
+        }
+    };
 </script>

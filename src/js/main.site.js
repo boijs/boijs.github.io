@@ -27,25 +27,16 @@ router.map({
             }, 'docs');
         }
     },
-    // 文档页
-    '/plugins': {
-        name: 'plugins',
+    // 资源
+    '/resource': {
+        name: 'resource',
         component: function(resolve) {
-            require.ensure(['./app/Plugins.vue'], function(require) {
-                resolve(require("./app/Plugins.vue"));
-            }, 'plugins');
+            require.ensure(['./app/Resource.vue'], function(require) {
+                resolve(require("./app/Resource.vue"));
+            }, 'resource');
         }
     },
-    // 文档页
-    '/faq': {
-        name: 'faq',
-        component: function(resolve) {
-            require.ensure(['./app/Faq.vue'], function(require) {
-                resolve(require("./app/Faq.vue"));
-            }, 'faq');
-        }
-    },
-    // 文档页
+    // 解决方案
     '/solutions': {
         name: 'solutions',
         component: function(resolve) {

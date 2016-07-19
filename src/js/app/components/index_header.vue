@@ -1,14 +1,14 @@
 <style lang='scss'>
-@import "../../../styles/_mixins.scss";
 
+@import "../../../styles/_mixins.scss";
 $height_logo: 5rem;
 $padding_nav: 1rem;
-
 .boi_nav {
-    position: relative;;
+    position: relative;
+    ;
     height: $height_logo+$padding_nav*2;
-    &.fix{
-        .nav_box{
+    &.fix {
+        .nav_box {
             position: fixed;
         }
     }
@@ -17,13 +17,14 @@ $padding_nav: 1rem;
         background-color: #fff;
         height: $height_logo;
         padding: $padding_nav 0;
-        position: absolute;;
+        position: absolute;
+        ;
         width: 100%;
         @include box-shadow( 0 2px 15px rgba(51, 51, 51, 0.5));
-        &.mini{
+        &.mini {
             @include box-shadow(none);
             background-color: inherit;
-            .bar{
+            .bar {
                 background-color: #fff;
             }
         }
@@ -89,7 +90,7 @@ $padding_nav: 1rem;
             <a v-link="{name: 'index'}" class="logo_box"></a>
             <span class="logo_entry">boi</span>
         </div>
-        <div class="bar" >
+        <div class="bar">
             <ul class="list">
                 <li v-for='item in navlist' class="item">
                     <a v-link="item.params?{name: item.component,params: item.params}:{name: item.component}" class="navlink" title="{{item.title}}">{{item.title}}</a>
@@ -102,6 +103,7 @@ $padding_nav: 1rem;
 </template>
 
 <script>
+
 import LogoCanvas from './_logo_canvas.vue';
 
 export default {
@@ -126,20 +128,16 @@ export default {
                 subanchor: 'install'
             }
         }, {
-            title: '资源',
-            component: 'plugins',
+            title: '前后端分离',
+            component: 'solutions',
             params: null
         }, {
-            title: '解决方案',
-            component: 'solutions',
+            title: '资源',
+            component: 'resource',
             params: null
         }, {
             title: 'API',
             component: 'api',
-            params: null
-        }, {
-            title: 'FAQ',
-            component: 'faq',
             params: null
         }, {
             title: '关于我们',

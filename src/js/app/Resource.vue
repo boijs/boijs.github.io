@@ -1,34 +1,39 @@
 <style lang='scss'>
 @import "../../styles/_mixins.scss";
-.about{
-    padding: 2rem;
+.content{
     max-width: 1024px;
     margin: 0 auto;
-    font-size: 1.5rem;
+    padding: 2rem;
+    .head{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .body{
+        padding: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
 }
 </style>
 <template>
     <!-- header -->
     <index-header v-bind:isfix='true'></index-header>
-    <div class="about">
-        <div class="content" v-html='content'>
-        </div>
+    <div class="content">
+        <div class="head">boi资源汇总</div>
+        <div class="body" v-html='content'></div>
     </div>
 </template>
 <script>
     import IndexHeader from './components/index_header.vue';
     export default {
         data: function(){
-            let _content = require("../../md/_about.md");
+            let _content = require('../../md/resource/_index.md');
             return {
                 content: _content
-            }
+            };
         },
         components: {
             IndexHeader
-        },
-        created: function(){
-
         }
     };
 </script>
