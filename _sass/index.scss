@@ -1,0 +1,50 @@
+@import '_mixin';
+@import '_variable';
+@import '_animation';
+@import 'fontawesome/font-awesome';
+
+@import 'index_stage';
+@import 'index_desc';
+@import 'index_showcase';
+@import 'index_demo';
+
+a{
+  color: $color-black;
+  &:hover,&:visited{
+    color: $color-black;
+  }
+}
+
+.hidden-msm{
+  @media screen and (max-width:$screen-msm){
+    &{
+      display: none;
+    }
+  }
+}
+.visible-msm-block{
+  display: none;
+  @media screen and (max-width:$screen-msm){
+    &{
+      display: block;
+    }
+  }
+}
+
+body{
+  height: 0;
+  overflow: hidden;
+  .boi-index-desc,.boi-index-demo,.boi-index-showcase,boi-footer{
+    display: none;
+  }
+  &.show{
+    height: inherit;
+    overflow: inherit;
+    .boi-index-desc{
+      display: flex;
+    }
+    .boi-index-demo,.boi-index-showcase,boi-footer{
+      display: block;
+    }
+  }
+}

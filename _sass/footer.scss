@@ -1,0 +1,16 @@
+.boi-footer{
+  .footer-list{
+    @include ulWithoutStyle;
+    .footer-item{
+      text-align: center;
+    }
+    .icon--github{
+      & >svg{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

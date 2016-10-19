@@ -1,0 +1,157 @@
+
+$size-code: 80%;
+$height-entry: 50px;
+
+.boi-index-demo {
+  padding: 150px 0 60px;
+  position: relative;
+  .demo-bak {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #d8d8d8;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 250%;
+      height: 100%;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      top: -100%;
+      @include transform(rotate(35deg));
+      @include transform-origin(left bottom);
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 250%;
+      height: 100%;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      bottom: -100%;
+      @include transform(rotate(-30deg));
+      @include transform-origin(left top);
+    }
+  }
+
+  .demo-action {
+    text-align: center;
+    margin-top: 100px;
+    cursor: pointer;
+
+    .action-link {
+      line-height: 1;
+      background-color: $color-black;
+      display: inline-block;
+      padding: 20px 80px;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 5px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .demo-stage {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      border: 2px solid $color-black;
+      position: absolute;
+      top: 0;
+      left: (100% - $size-code) / 2;
+      width: $size-code;
+      height: 100%;
+      z-index: -1;
+      @include transform(translate($height-entry/2, -$height-entry/2));
+    }
+
+    .stage-code,
+    .stage-entry {
+      width: $size-code;
+      background-color: $color-cli-back;
+      color: $color-cli-font;
+      margin: 0 auto;
+      font-size: 16px;
+      position: relative;
+    }
+
+    .stage-entry {
+      padding: 0 30px;
+      margin-top: 20px;
+      white-space: nowrap;
+      @include strictHeight($height-entry);
+    }
+
+    .stage-code {
+      padding: 20px 30px;
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+      @include border-radius(0);
+
+      .comment {
+        font-style: italic;
+        color: grey;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .boi-index-demo {
+    .demo-stage {
+      .stage-code,
+      .stage-entry {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-msm) {
+  .boi-index-demo {
+    padding-top: 80px;
+
+    .demo-action {
+      margin-top: 50px;
+
+      .action-link {
+        padding: 15px 50px;
+        font-size: 18px;
+      }
+    }
+
+    .demo-stage {
+      &::after {
+        @include transform(translate(15px, -15px));
+      }
+
+      .stage-code,
+      .stage-entry {
+        font-size: 12px;
+      }
+
+      .stage-code {
+        padding: 5px 10px;
+      }
+
+      .stage-entry {
+        padding: 0 10px;
+        margin-top: 10px;
+        @include strictHeight(30px);
+      }
+    }
+  }
+}

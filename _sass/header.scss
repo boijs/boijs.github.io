@@ -1,0 +1,22 @@
+@import '_mixin';
+@import '_variable';
+
+.boi-navbar {
+  .navbar-brand {
+    padding: 0 0 0 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .brand-img {
+      max-height: 80%;
+    }
+
+    .brand-title {
+      font-family: $font-slogan;
+      margin-left: 10px;
+      font-size: 22px;
+      color: $color-blue-drak;
+    }
+  }
+}

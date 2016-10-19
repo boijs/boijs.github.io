@@ -1,0 +1,38 @@
+@mixin transform($rule){
+  -webkit-transform: $rule;
+  -moz-transform: $rule;
+  -o-transform: $rule;
+  transform: $rule;
+}
+
+@mixin transform-origin($rule){
+  -webkit-transform-origin: $rule;
+  -moz-transform-origin: $rule;
+  -o-transform-origin: $rule;
+  transform-origin: $rule;
+}
+
+@mixin strictHeight($size){
+  height: $size;
+  line-height: $size;
+}
+
+@mixin animation($rule){
+  -webkit-animation: $rule;
+  -moz-animation: $rule;
+  -o-animation: $rule;
+  animation: $rule;
+}
+
+@mixin ulWithoutStyle{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin border-radius($size){
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  -o-border-radius: $size;
+  border-radius: $size;
+}

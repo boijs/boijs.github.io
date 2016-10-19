@@ -1,0 +1,19 @@
+.layout-content{
+  margin-top: 60px;
+  padding: 0 10%;
+  img{
+    max-width: 100%;
+  }
+}
+.about-box{
+  .about-list{
+    .about-item{
+      font-size: 16px;
+    }
+  }
+  .icon--github{
+    > svg{
+      width: 16px;
+    }
+  }
+}

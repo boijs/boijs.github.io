@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "boi build prod",
-    "deploy": "node deploy.js",
     "serve": "jekyll serve --incremental"
   },
   "devDependencies": {

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: TrumpTownPro;
+    src: url('../assets/fonts/TrumpTownPro.otf');
+}
+
+/* fonts */
+$font-general: Open Sans, Helvetica, Arial, sans-serif;
+$font-slogan: TrumpTownPro, $font-general;
+
+/* colors */
+$color-blue-drak: #315788;
+$color-grey: grey;
+$color-black: #4a4a4a;
+$color-cli-back: #4a4a4a;
+$color-cli-font: #fff;
+
+/* screen */
+$screen-msm: 430px;
+$screen-sm: 768px;
+$screen-md: 992px;
