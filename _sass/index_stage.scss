@@ -132,8 +132,9 @@ body.show {
 @media screen and (max-width: $screen-msm) {
   .boi-index-stage {
     .stage-content .content-title {
-      font-size: 150px;
-      @include strictHeight(150px);
+      font-size: 120px;
+      @include strictHeight(120px);
+      margin-bottom: 30px;
     }
     .stage-back .back-item{
       height: 40%;
