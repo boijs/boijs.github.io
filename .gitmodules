@@ -1,3 +1,3 @@
-[submodule "DbConnector"]
+[submodule "boi-docs"]
 	path = boi-docs
 	url = https://github.com/boijs/boi-docs
