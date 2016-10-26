@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "jekyll serve --incremental"
+    "serve": "jekyll serve --incremental",
+    "build:docs": "node _build/docs.js"
   },
   "devDependencies": {
     "boi-plugin-loader-md": "^1.0.2",
     "boi-plugin-loader-vue": "^1.0.1",
     "markdown-loader": "^0.1.7",
-    "shelljs": "^0.7.0",
+    "shelljs": "^0.7.4",
     "vue": "^1.0.26",
     "vue-router": "^0.7.13"
   },

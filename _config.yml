@@ -9,7 +9,8 @@ github_team: boijs
 
 # Build settings
 markdown: kramdown
-Exclude: ['src','boi-conf.js','deploy.js']
+exclude: ['src','boi-docs','node_modules']
+include: ['docs/_config.basic.html']
 
 sass:
     sass_dir: _sass
