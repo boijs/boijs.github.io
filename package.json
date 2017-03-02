@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "jekyll serve --incremental",
-    "build:docs": "node _build/docs.js"
+    "serve": "jekyll serve --incremental"
   },
   "devDependencies": {
     "boi-plugin-loader-md": "^1.0.2",
