@@ -53,6 +53,13 @@
     .content-desc {
       font-size: 24px;
       @include strictHeight(24px);
+      @media (max-width: 767px){
+        font-size: 18px;
+        @include strictHeight(18px);
+      }
+    }
+    .content-badge{
+      margin-top: 20px;
     }
   }
 
